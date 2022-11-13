@@ -1,0 +1,13 @@
+${AnsiColor.BRIGHT_RED}
+${AnsiBackground.BRIGHT_BLACK}
+.__  .__
+|__| |  |   _______  __ ____    ___.__. ____  __ __
+|  | |  |  /  _ \  \/ // __ \  <   |  |/  _ \|  |  \
+|  | |  |_(  <_> )   /\  ___/   \___  (  <_> )  |  /
+|__| |____/\____/ \_/  \___  >  / ____|\____/|____/
+                           \/   \/
+
+ MANIFEST版本号:${application.version}
+ MANIFEST格式化版本号:${application.formatted-version}
+ SpringBoot版本号:${spring-boot.version}
+ SpringBoot格式化版本号:${spring-boot.formatted-version}
