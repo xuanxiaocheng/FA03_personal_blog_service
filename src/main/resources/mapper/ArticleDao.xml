@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="app.example.demo.Dao.ArticleDao">
-    <select id="selectArticleData" resultType="app.example.demo.entity.Article">
-       select * from goodText limit #{curPage}, #{pageSize}
+<mapper namespace="app.example.blogBE.Dao.ArticleDao">
+    <select id="selectArticleData" resultType="app.example.blogBE.entity.Article">
+        <if test="pageNum == 0">
+            select * from goodText limit 0, #{pageSize}
+        </if>
+        <if test="pageNum != 0">
+            select * from goodText limit ${(pageNum - 1) * pageSize}, #{pageSize}
+        </if>
     </select>
-    <select id="selectQestionData" resultType="app.example.demo.entity.Question">
+    <select id="selectQestionData" resultType="app.example.blogBE.entity.Question">
        select * from goodQuestion limit #{curPage}, #{pageSize}
     </select>
 </mapper>

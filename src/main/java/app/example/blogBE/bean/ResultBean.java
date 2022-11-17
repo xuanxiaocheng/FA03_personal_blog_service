@@ -1,4 +1,4 @@
-package app.example.demo.dto.response;
+package app.example.blogBE.bean;
 
 import java.io.Serializable;
 

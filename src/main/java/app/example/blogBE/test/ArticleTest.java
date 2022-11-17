@@ -1,10 +1,10 @@
-package app.example.demo.test;
+package app.example.blogBE.test;
 
-import app.example.demo.entity.Article;
+import app.example.blogBE.entity.Article;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import app.example.demo.Dao.ArticleDao;
+import app.example.blogBE.Dao.ArticleDao;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class ArticleTest {
         //获取mapper接口对象,帮助创建这个UserMapper的实现类，返回实现类对象
         ArticleDao mapper = sqlSession.getMapper(ArticleDao.class);
         //测试功能
-        List<Article> result = mapper.selectArticleData(1, 5);
+        List<Article> result = mapper.selectArticleData(null);
         //提交事务
         //sqlSession.commit();
         System.out.println("result:"+result);

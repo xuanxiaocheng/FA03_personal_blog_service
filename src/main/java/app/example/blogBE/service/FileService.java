@@ -1,4 +1,4 @@
-package app.example.demo.Service;
+package app.example.blogBE.service;
 
 import org.springframework.stereotype.Service;
 import javax.servlet.ServletOutputStream;

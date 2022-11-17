@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="app.example.demo.Dao.UserDao">
-    <select id="selectUserData" parameterType="app.example.demo.dto.request.PaginationBean" resultType="app.example.demo.entity.User">
+<mapper namespace="app.example.blogBE.Dao.UserDao">
+    <select id="selectUserData"  resultType="app.example.blogBE.entity.user.User">
        <if test="pageNum == 0">
            select * from all_user limit 0, #{pageSize}
        </if>
         <if test="pageNum != 0">
             select * from all_user limit ${(pageNum - 1) * pageSize}, #{pageSize}
         </if>
+    </select>
+    <select id="login" resultType="app.example.blogBE.entity.user.User">
+        SELECT * FROM all_user WHERE username = #{username} AND password = #{password}
     </select>
 </mapper>

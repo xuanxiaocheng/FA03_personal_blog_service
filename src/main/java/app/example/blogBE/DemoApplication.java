@@ -1,17 +1,19 @@
-package app.example.demo;
+package app.example.blogBE;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.util.unit.DataSize;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.MultipartConfigElement;
 import javax.servlet.http.HttpServletResponse;
 
+@EnableCaching
 @SpringBootApplication
-@MapperScan(value = "app.example.demo.Dao")
+@MapperScan(value = "app.example.blogBE.Dao")
 public class DemoApplication {
 
     @RestController

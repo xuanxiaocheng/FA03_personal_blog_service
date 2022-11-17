@@ -1,4 +1,4 @@
-package app.example.demo.dto.response;
+package app.example.blogBE.bean;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -6,21 +6,21 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.List;
 
 @ApiModel("分页与查询")
-public class ResultPaginationBean<T, O> {
+public class PaginationHelper<T, O> {
 
-    @ApiModelProperty("开始记录索引")
+    @ApiModelProperty(value = "开始记录索引", hidden = true)
     private int start;
     @ApiModelProperty("当前页码")
     private int pageNum;
     @ApiModelProperty("每页条数")
     private int pageSize;
-    @ApiModelProperty("数据总条数")
+    @ApiModelProperty(value = "数据总条数", hidden = true)
     private int totalSize;
-    @ApiModelProperty("总页数")
+    @ApiModelProperty(value = "总页数", hidden = true)
     private int totalPages;
     @ApiModelProperty("查询参数")
     private O options;
-    @ApiModelProperty("返回的数据")
+    @ApiModelProperty(value = "返回的数据", hidden = true)
     private List<T> data;
 
     public int getStart() {
